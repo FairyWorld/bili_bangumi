@@ -13,10 +13,10 @@ export class Navigator {
 
     this._router = new Navigo("/");
 
-    const header = AppHeader.generate().build("Bangumi", () => {
+    const header = AppHeader.generate().build("Bangumi (DEPRECATED)", () => {
       this._router.navigate("/");
-    }).addRightMenu("GitHub", () => {
-      document.location.href = "https://github.com/JasonKhew96/bangumi";
+    }).addRightMenu("GitHub (DEPRECATED)", () => {
+      document.location.href = "https://github.com/JasonKhew96/bangumi/issues/20";
     });
 
     const homeCards = HomeCards.generate()
@@ -45,33 +45,33 @@ export class Navigator {
       });
 
     this._router.on("/", () => {
-      document.title = "Bangumi | Home";
+      document.title = "Bangumi | Home (DEPRECATED)";
       app.innerHTML = "";
       app.appendChild(AppContainer.generate().build(header, appHome, footer));
     });
 
     this._router.on("/404", () => {
-      document.title = "Bangumi | 404";
+      document.title = "Bangumi | 404 (DEPRECATED)";
       app.innerHTML = "";
       app.appendChild(AppContainer.generate().build(header, appHome, footer));
     });
 
     this._router.on("/bilibili", () => {
-      document.title = "Bangumi | 哔哩哔哩";
+      document.title = "Bangumi | 哔哩哔哩 (DEPRECATED)";
       app.innerHTML = "";
       const table = new BilibiliTable();
       app.appendChild(AppContainer.generate().build(header, table, footer));
     });
 
     this._router.on("/bilibili_sea", () => {
-      document.title = "Bangumi | 哔哩哔哩(东南亚)";
+      document.title = "Bangumi | 哔哩哔哩(东南亚) (DEPRECATED)";
       app.innerHTML = "";
       const table = new BilibiliSEATable();
       app.appendChild(AppContainer.generate().build(header, table, footer));
     });
 
     this._router.on("/animad", () => {
-      document.title = "Bangumi | 巴哈姆特動畫瘋";
+      document.title = "Bangumi | 巴哈姆特動畫瘋 (DEPRECATED)";
       app.innerHTML = "";
       const table = new AnimadTable();
       app.appendChild(AppContainer.generate().build(header, table, footer));
